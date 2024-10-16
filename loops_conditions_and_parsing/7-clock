@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#Printing Hour
+
+var="Hour"
+h="0"
+while [ $h -lt 13 ]; do
+   echo "$var:" "$h"
+   s="1"
+   while [ $s -lt 60 ]; do
+	   echo "$s"
+	   ((s++))
+   done
+
+  ((h++))
+done
+
