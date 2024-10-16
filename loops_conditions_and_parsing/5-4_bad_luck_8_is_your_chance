@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#This script is displaying "Best School" 10 times
+#Prints HI at the 9 time
+
+
+look="Best School"
+look1="bad luck"
+look2="good luck"
+i="0"
+while [ $i -lt 10 ]; do
+	if [ $i -eq 3 ]; then
+		echo "$look1"
+	elif [ $i -eq 8 ]; then
+		echo "$look2"
+	else
+	echo "$look"
+	fi
+	((i++))
+done
+
