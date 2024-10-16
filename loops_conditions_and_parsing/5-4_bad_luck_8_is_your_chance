@@ -6,11 +6,11 @@
 look="Best School"
 look1="bad luck"
 look2="good luck"
-i="1"
-while [ $i -lt 11 ]; do
+i="0"
+while [ $i -lt 10 ]; do
 	if [ $i -eq 3 ]; then
 		echo "$look1"
-	elif [ $i -eq 8 ]; then
+	elif [ $i -eq 7	]; then
 		echo "$look2"
 	else
 	echo "$look"
