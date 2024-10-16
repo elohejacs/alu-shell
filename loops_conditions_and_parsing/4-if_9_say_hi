@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#This script is displaying "Best School" 10 times
+#Prints HI at the 9 time
+
+
+look="Best School"
+look2="Hi"
+i="0"
+while [ $i -lt 10 ]; do
+	if [ $i -eq 9 ]; then
+		echo "$look2"
+	fi
+	echo "$look"
+	((i++))
+done
+
