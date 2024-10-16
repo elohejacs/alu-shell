@@ -3,9 +3,9 @@
 #Prints numbers
 
 
-look="bad luck from china"
-look1="bad luck from japan"
-look2="bad luck from italy"
+look="bad luck from China"
+look1="bad luck from Japan"
+look2="bad luck from Italy"
 i="1"
 while [ $i -lt 21 ]; do
 	case $i in
