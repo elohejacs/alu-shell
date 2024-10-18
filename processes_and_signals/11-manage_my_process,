@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+#Display the infinity and beyond
+
+
+while [[ 1 -eq 1 ]]; do
+	echo "To infinity and beyond"
+	sleep 2
+done
+#!/usr/bin/env bash
+# i love you
+
+PID_FILE="/var/run/myscript.pid"
+
+# Function to clean up PID file and exit
+clean_up() {
+    echo "Cleaning up..."
+    if [ -f "$PID_FILE" ]; then
+        rm "$PID_FILE"
+        echo "PID file removed."
+        exit 0
+    else
+        echo "$PID_FILE not found"
+        exit 1
+    fi
+}
+
+# Store the current process ID in a PID file
+echo "Creating PID file..."
+if echo $$ > "$PID_FILE"; then
+    echo "PID file created successfully"
+else
+    echo "Failed to create PID file"
+    exit 1
+fi
+
+# Call the clean_up function when the script exits
+trap clean_up EXIT
+
+# Simulate some work (replace with actual script logic)
+echo "Simulating work with sleep..."
+sleep 10  # Simulating some background work (replace with your actual work)
+
+# Check if the process is running (PID file should exist)
+echo "Checking if PID file exists..."
+if [ -f "$PID_FILE" ]; then
+    echo "OK"
+else
+    echo "10-process_and_pid_file not running"
+fi
+
