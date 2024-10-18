@@ -15,8 +15,9 @@ clean_up() {
 }
 
 # Store the current process ID in a PID file
-echo $$ > "$PID_FILE"
-if [ $? -ne 0 ]; then
+if echo $$ > "$PID_FILE"; then
+    echo "PID file created successfully"
+else
     echo "Failed to create PID file"
     exit 1
 fi
@@ -24,10 +25,10 @@ fi
 # Call the clean_up function when the script exits
 trap clean_up EXIT
 
-# Simulate some work (add your actual script logic here)
-sleep 10  # Replace with your actual script logic
+# Simulate some work (replace with actual script logic)
+sleep 10  # Simulating some background work (replace with your actual work)
 
-# Check if the process is running
+# Check if the process is running (PID file should exist)
 if [ -f "$PID_FILE" ]; then
     echo "OK"
 else
