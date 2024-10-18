@@ -1,8 +1,15 @@
 #!/usr/bin/env bash
-#i love you
+# i love you
 
-clean_up='rm /var/run/myscript.pid; exist $?'
+# Function to clean up PID file and exit
+clean_up() {
+    rm /var/run/myscript.pid
+    exit $?
+}
 
+# Store the current process ID in a PID file
 echo $$ > "/var/run/myscript.pid"
 
+# Call the clean_up function when the script exits
+trap clean_up EXIT
 
