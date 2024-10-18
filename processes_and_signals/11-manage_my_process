@@ -21,11 +21,11 @@ if [[ "$#" -eq 1 ]]; then
         if [[ -f /var/run/my_process.pid ]]; then
             kill "$(cat /var/run/my_process.pid)"
             rm /var/run/my_process.pid
-            echo "manage_my_process stopped"
         fi
+        # Start the process again
         ./manage_my_process &
         echo "$!" > /var/run/my_process.pid
-        echo "manage_my_process restarted"
+        echo "manage_my_process restarted"  # Only print restart message
     else
         echo "Usage: manage_my_process {start|stop|restart}"
     fi
