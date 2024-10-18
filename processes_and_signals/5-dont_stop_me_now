@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 # Display and terminate processes named '4-to_infinity_and_beyond'
 
-# Get the PIDs of processes named '4-to_infinity_and_beyond'
-prog_pid=($(pgrep -f "4-to_infinity_and_beyond"))
+# Use mapfile to read PIDs into an array
+mapfile -t prog_pid < <(pgrep -f "4-to_infinity_and_beyond")
 
 # Iterate through the list of PIDs and send the SIGTERM signal
 for pid in "${prog_pid[@]}"; do
     kill -s SIGTERM "$pid"
 done
+
 
