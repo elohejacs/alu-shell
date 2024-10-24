@@ -1,2 +1,6 @@
 #!/bin/bash
-sudo betty
+# Script to switch to user betty
+
+echo "Switching to user betty..."
+exec su betty
+
