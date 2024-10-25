@@ -1,2 +1,2 @@
 #!/bin/bash
-(find . -type f -empty; find . -type d -empty) | sed 's|./||'
+find . -empty -print | cut -c 3- | sort
