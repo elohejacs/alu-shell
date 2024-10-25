@@ -1,0 +1,3 @@
+#!/bin/bash
+find . -type f -empty -print | sed 's|./||' # Find empty files and remove './' from output
+find . -type d -empty -print | sed 's|./||' # Find empty directories and remove './' from output
